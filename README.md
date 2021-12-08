@@ -60,6 +60,16 @@ AnyRare is designed to be a decentralized organization which anyone can contribu
 9. Custodians:
 10. Advisors:
 
+### ARA Pricing Formula
+
+### Collection Pricing Formula
+
+### Governance Rules
+
+### Funding Management
+
+### Project Roadmap
+
 ### Contributors
 - [Panasun Sunanta (Bin)](mailto:panasun@i17.co) (Founder and Lead Developer)
 - [Guarantee Pra Co., Ltd.](http://g-pra.com) (Founder and Amulet Specialist Partner)
