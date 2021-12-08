@@ -9,6 +9,9 @@ Last update: Dec 8, 2021
 ## Abstract
 
 ## Table of Contents
+- [Introduction](#introduction)
+- [Stakeholders](#stakeholders)
+- [Physical Assets Tokenization](#physical-assets-tokenization)
 
 ### Introduction
 Rare items are desirable to collect and invest in because they have sentimental value, are unique and in limited supply, are priced according to the collector's satisfaction, and have a low or no correlation to financial assets returns.
@@ -42,6 +45,20 @@ The following describes the process of converting rare assets to AnyRare tokens.
 8. To sell a share, you can automate the process and obtain an ARA that secures in the smart contract. The portion of the collection that you sell will be burned, so decreasing the collection's overall share. Additionally, the Bancor Formula was used to govern the pricing of purchases and sales. Please note that if the value of the sale exceeds the ARA collateral reserved, the seller will get no more than the collateral reserved, and the remaining tokens will be burned to lower the collection's total quantity. This technique is intended to reduce the current collection price; if the current collection price is set too high and does not incentivize an investor, the existing shareholder may burn their token to reduce the current collection price.
 9. Once an NFT token has been transformed to a collection, the collector is not permitted to withdraw the asset from the custodian. If someone wishes to withdraw an item from collection, they must bid at least the buyout target price set by the fractional shareholder and the auction procedure will begin.
 10. Once a bid is placed at or over the buyout price, the auction will remain open for X days. The auction winner will acquire all NFT assets in this collection, and the ARA from the auction and collateral in the collection smart contract will be distributed equally to collection shareholders. Additionally, this collection will be destroyed. If the collection price is too low in comparison to its true value, this method enabled the arbitrageur to purchase the collection in order to unlock an NFT asset and withdraw from the custodian, at which point they can sell the asset in the real world for its true value.
+
+### Incentive Benefit
+AnyRare is designed to be a decentralized organization which anyone can contribute their own resources to its growth. Any party that participates in AnyRare should receive a benefit that is both reasonable and motivating. As a result, we've designed this benefit structure to encourage participation from all parties.
+
+1. Asset Founders:
+2. Collectors:
+3. Collection Shareholders:
+4. Investors:
+5. Founders:
+6. Developers:
+7. Influencers:
+8. Auditors:
+9. Custodians:
+
 ### Contributors
 - [Panasun Sunanta (Bin)](mailto:panasun@i17.co) (Founder and Lead Developer)
 - [Guarantee Pra Co., Ltd.](http://g-pra.com) (Founder and Amulet Specialist Partner)
