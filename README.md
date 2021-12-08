@@ -58,6 +58,7 @@ AnyRare is designed to be a decentralized organization which anyone can contribu
 7. Influencers:
 8. Auditors:
 9. Custodians:
+10. Advisors:
 
 ### Contributors
 - [Panasun Sunanta (Bin)](mailto:panasun@i17.co) (Founder and Lead Developer)
