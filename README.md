@@ -1,4 +1,4 @@
-# AnyRare
+# AnyRare Whitepaper
 
 Author: [Panasun Sunanta (Bin)](mailto:panasun@i17.co)
 
