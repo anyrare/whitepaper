@@ -12,6 +12,13 @@ Last update: Dec 8, 2021
 - [Introduction](#introduction)
 - [Stakeholders](#stakeholders)
 - [Physical Assets Tokenization](#physical-assets-tokenization)
+- [Incentive Benefit](#incentive-benefit)
+- [ARA Pricing Formula](#ara-pricing-formula)
+- [Collection Pricing Formula](#collection-pricing-formula)
+- [Governance Rules](#governance-rules)
+- [Funding Management](#funding-management)
+- [Project Roadmap](#project-roadmap)
+- [Contributors](#contributors)
 
 ### Introduction
 Rare items are desirable to collect and invest in because they have sentimental value, are unique and in limited supply, are priced according to the collector's satisfaction, and have a low or no correlation to financial assets returns.
