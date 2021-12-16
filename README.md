@@ -32,7 +32,7 @@ However, due to the nature of this asset class, it is only accessible to a selec
 To address this issue, we propose the AnyRare platform, a decentrailzed platform for the tokenization of tangible assets. This design is based on the [Continous Organization](https://github.com/C-ORG/whitepaper) principle and the [Bancor Formula](https://github.com/Permissionless-Software-Foundation/token-liquidity/blob/master/docs/bancor-formulas/bancor-protocol-whitepaper.pdf) in order to incentive a benefit for all stakeholders.
 ### Stakeholders
 - **Asset Founders:** those who own rare assets and send them to an auditor for minting, as well as storing them with a custodian.
-- **Auditors:** a specialist in that asset class is responsible for certifying rare assets and minting them to the blockchain.
+- **Auditors / Curators:** a specialist in that asset class is responsible for certifying rare assets and minting them to the blockchain.
 - **Custodians:** who is accountable for storing and delivering a physical rare asset upon request from the asset owner or collector.
 - **Collectors:** a non-fungible asset owner who can hold an asset, initiate an auction, withdraw a physical asset, or fractionalize an asset through the creation of a collection.
 - **Collection Shareholders:** A fractional stakeholders in a collection who may hold fractional shares in order to earn a capital gain or to earn a profit when the collection is sold to a collector.
