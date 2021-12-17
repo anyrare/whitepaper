@@ -1,4 +1,4 @@
-# AnyRare Whitepaper
+# AnyRare Whitepaper (Draft)
 
 Author: [Panasun Sunanta (Bin)](mailto:panasun@i17.co)
 
@@ -63,20 +63,38 @@ AnyRare is designed to be a decentralized organization which anyone can contribu
 5. Founders:
 6. Developers:
 7. Influencers:
-8. Auditors:
+8. Auditors / Curators:
 9. Custodians:
 10. Advisors:
 
 ### ARA Pricing Formula
+The ARA was using a bonding curve formula to determine the price. To begin minting new ARA tokens, the minter must first transfer the collateral token (DAI) to the ARA smart contract. Then, according to the following formula, the new ARA token will be issued in total supply.
+
+`IssuedToken = ContinuousTokenSupply * ((1 + CollateralTokensReceived / CollateralTokenBalance) ^ (CollateralRatio) - 1)`
+
+The minter will be receive
+
+`MinterPurchaseReturn = IssuedToken * (1 - ManagementRatio)`
+
+Additionally, the remainder of the issued tokens will be distributed for management purposes.
+
+`ManagementFund = IssuedToken * ManagementRatio`
+
+To withdraw, the withdrawer must transfer ARA tokens to the smart contract and will receive collateral tokens according to the formula below.
+
+`WithdrawerSaleReturn = CollateralTokenBalance * (1 - (1 - ContinuosTokensReceived / ContinuousTokensSupply) ^ (1 / CollateralRatio))`
+
+Please keep in mind that this formula will dynamically adjust the overall quantity of ARA tokens based on the collateral tokens locked in the smart contract.
 
 ### Collection Pricing Formula
 
 ### Governance Rules
 
 ### Funding Management
+The 1-Collateral of ARA were distributed to management wallets for develop Anyrare platform and ecosystem.
 
 ### Project Roadmap
 
 ### Contributors
-- [Panasun Sunanta (Bin)](mailto:panasun@i17.co) (Founder and Lead Developer)
-- [Guarantee Pra Co., Ltd.](http://g-pra.com) (Founder and Amulet Specialist Partner)
+- [Panasun Sunanta (Bin)](mailto:panasun@i17.co) (Lead Developer)
+- [Guarantee Pra Co., Ltd.](http://g-pra.com) (Amulet Specialist Partner)
