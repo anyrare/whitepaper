@@ -70,19 +70,19 @@ AnyRare is designed to be a decentralized organization which anyone can contribu
 ### ARA Pricing Formula
 The ARA was using a bonding curve formula to determine the price. To begin minting new ARA tokens, the minter must first transfer the collateral token (DAI) to the ARA smart contract. Then, according to the following formula, the new ARA token will be issued in total supply.
 
-`IssuedToken = ARATokenSupply * ((1 + CollateralTokensReceived / CollateralTokenBalance) ^ (CollateralRatio) - 1)`
+    IssuedToken = ARATokenSupply * ((1 + CollateralTokensReceived / CollateralTokenBalance) ^ (CollateralRatio) - 1)
 
 The minter will be receive.
 
-`MinterPurchaseReturn = IssuedToken * (1 - ManagementRatio)`
+    MinterPurchaseReturn = IssuedToken * (1 - ManagementRatio)
 
 Additionally, the remainder of the issued tokens will be distributed for management purposes.
 
-`ManagementFund = IssuedToken * ManagementRatio`
+    ManagementFund = IssuedToken * ManagementRatio
 
 To withdraw, the withdrawer must transfer ARA tokens to the smart contract and will receive collateral tokens according to the formula below.
 
-`WithdrawerSaleReturn = CollateralTokenBalance * (1 - (1 - ARATokensReceived / ARATokensSupply) ^ (1 / CollateralRatio))`
+    WithdrawerSaleReturn = CollateralTokenBalance * (1 - (1 - ARATokensReceived / ARATokensSupply) ^ (1 / CollateralRatio))
 
 Please keep in mind that this formula will dynamically adjust the overall quantity of ARA tokens based on the collateral tokens locked in the smart contract.
 
@@ -97,19 +97,19 @@ The collector is not permitted to withdraw NFTs from the custodian at this point
 
 To purchase collection shares, investors will transfer ARA to the collection smart contract, which will issued a new collection token using the following equation.
 
-`IssuedCollectionToken = CollectionTokenSupply * ((1 + ARATokensReceived * (1 - AnyrareFee - ReferralFee)  / (ARATokenBalance + TargetBuyoutPrice)) ^ (CollectionCollateralRatio) - 1)`
+    IssuedCollectionToken = CollectionTokenSupply * ((1 + ARATokensReceived * (1 - AnyrareFee - ReferralFee)  / (ARATokenBalance + TargetBuyoutPrice)) ^ (CollectionCollateralRatio) - 1)
 
 The investor will be receive.
 
-`InvestorPurchaseReturn = IssuedCollectionToken * (1 - CollectorFee)`
+    InvestorPurchaseReturn = IssuedCollectionToken * (1 - CollectorFee)
 
 Additionally, the remainder of the issued tokens will be transfer to collector for royaly fee.
 
-`CollectorRoyaltyReturn = IssuedCollectionToken * CollectorFee`
+    CollectorRoyaltyReturn = IssuedCollectionToken * CollectorFee
 
 To sell, the investor must transfer collections tokens to the smart contract and will receive ARA tokens according to the formula below.
 
-`InvestorSaleReturn = Min(ARATokenBalance, (ARATokenBalance + TargetBuyoutPrice) * (1 - (1 - CollectionTokensRecived * (1 - CollectorFee) / CollectionTokensSupply) ^ (1 / CollectionCollateralRatio)) * (1 - AnyrareFee - ReferralFee))`
+    InvestorSaleReturn = Min(ARATokenBalance, (ARATokenBalance + TargetBuyoutPrice) * (1 - (1 - CollectionTokensRecived * (1 - CollectorFee) / CollectionTokensSupply) ^ (1 / CollectionCollateralRatio)) * (1 - AnyrareFee - ReferralFee))
 
 If the current collection price is too high, other investors will be discouraged from investing. Shareholders in collection will be able to burn their tokens or set new target price in order to reduce the total supply and current collection price.
 
