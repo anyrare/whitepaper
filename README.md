@@ -15,8 +15,8 @@ Last update: Dec 17, 2021
 - [Incentive Benefit](#incentive-benefit)
 - [ARA Pricing Formula](#ara-pricing-formula)
 - [Collection Pricing Formula](#collection-pricing-formula)
-- [Governance Rules](#governance-rules)
 - [Funding Management](#funding-management)
+- [Governance Rules](#governance-rules)
 - [Project Roadmap](#project-roadmap)
 - [Contributors](#contributors)
 
@@ -58,14 +58,14 @@ AnyRare is designed to be a decentralized organization which anyone can contribu
 
 1. Asset Founders: Liquidity from first sale and royalty sale for next sales.
 2. Collectors: Collect rare assets without owning them physically. Create a collection to obtain liquidity and the collector fee.
-3. Collection Shareholders: 
-4. Investors:
-5. Founders:
-6. Developers:
-7. Influencers:
-8. Auditors / Curators:
-9. Custodians:
-10. Advisors:
+3. Collection Shareholders: Diversify an rare assets investment and receive instant liquidity.
+4. Investors: You can become an Anyrare owner simply by purchasing ARA. As a result, you can either continue to fund collateral tokens to support the Anyrare platform's growth or decapitalize it by removing them.
+5. Founders / Managers: Have the right to control management fund in order to growth anyrare platform and ecosystem.
+6. Developers: Have the right to control management fund in order to develop anyrare platform.
+7. Influencers: Earn commissions when your referrals purchase an assets NFT or collection shares.
+8. Auditors / Curators: Earn an audit fee when the asset's founder sends the physical asset to mint NFT.
+9. Custodians: Earn a custodian fee when a collector purchase NFT asset or withdrawing them to a physical asset.
+10. Advisors: Obtain an ARA from the manager in order to provide advice.
 
 ### ARA Pricing Formula
 The ARA was using a bonding curve formula to determine the price. To begin minting new ARA tokens, the minter must first transfer the collateral token (DAI) to the ARA smart contract. Then, according to the following formula, the new ARA token will be issued in total supply.
