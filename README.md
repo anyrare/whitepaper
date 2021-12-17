@@ -2,7 +2,7 @@
 
 Author: [Panasun Sunanta (Bin)](mailto:panasun@i17.co)
 
-Version: 0.1.1
+Version: 0.1.2
 
 Last update: Dec 17, 2021
 
@@ -56,9 +56,9 @@ The following describes the process of converting rare assets to AnyRare tokens.
 ### Incentive Benefit
 AnyRare is designed to be a decentralized organization which anyone can contribute their own resources to its growth. Any party that participates in AnyRare should receive a benefit that is both reasonable and motivating. As a result, we've designed this benefit structure to encourage participation from all parties.
 
-1. Asset Founders:
-2. Collectors:
-3. Collection Shareholders:
+1. Asset Founders: Liquidity from first sale and royalty sale for next sales.
+2. Collectors: Collect rare assets without owning them physically. Create a collection to obtain liquidity and the collector fee.
+3. Collection Shareholders: 
 4. Investors:
 5. Founders:
 6. Developers:
@@ -86,18 +86,18 @@ To withdraw, the withdrawer must transfer ARA tokens to the smart contract and w
 
 Please keep in mind that this formula will dynamically adjust the overall quantity of ARA tokens based on the collateral tokens locked in the smart contract.
 
+When Anyrare collects a fee, `Fee * (1 - BuyBackRatio)` is distributed to management funds and the remaining is burnend or buybacked in order to increase the ARA price. 
+
 ### Collection Pricing Formula
 Due to the characteristics of rare assets, which include billion of skus, traditional liquidity models such as order books are unsuitable to offer sufficient liquidity. As a result, we will implement an automated market maker (AMM) method based on the bonding curve formula in orders to provide immediate liquidity to collection shareholders.
 
-To create a collection, the collect will select NFTs to fractionalize, set the collection's target price in ARA currency, collector fee, and collateral ratio. Then, the collector's NFTs will be transferred to a collection smart contract, and the collector will receive 100% of the collection shares.
+To create a collection, the collect will select NFTs to fractionalize, set the collection's target buyout price in ARA currency, initial collection token, collector fee, and collateral ratio. Then, the collector's NFTs will be transferred to a collection smart contract, and the collector will receive 100% of the collection shares.
 
 The collector is not permitted to withdraw NFTs from the custodian at this point. To withdraw, the collector or anyone else must buyout the collection, at which point the collection's NFTs will be unlocked and transferred to the new owner.
 
-`InitialCollectionToken = `
-
 To purchase collection shares, investors will transfer ARA to the collection smart contract, which will issued a new collection token using the following equation.
 
-`IssuedCollectionToken = CollectionTokenSupply * ((1 + ARATokensReceived * (1 - AnyrareFee - ReferralFee)  / ARATokenBalance) ^ (CollectionCollateralRatio) - 1)`
+`IssuedCollectionToken = CollectionTokenSupply * ((1 + ARATokensReceived * (1 - AnyrareFee - ReferralFee)  / (ARATokenBalance + TargetBuyoutPrice)) ^ (CollectionCollateralRatio) - 1)`
 
 The investor will be receive.
 
@@ -109,14 +109,23 @@ Additionally, the remainder of the issued tokens will be transfer to collector f
 
 To sell, the investor must transfer collections tokens to the smart contract and will receive ARA tokens according to the formula below.
 
-`InvestorSaleReturn = ARATokenBalance * (1 - (1 - CollectionTokensRecived * (1 - CollectorFee) / CollectionTokensSupply) ^ (1 / CollectionCollateralRatio)) * (1 - AnyrareFee - ReferralFee)`
+`InvestorSaleReturn = Min(ARATokenBalance, (ARATokenBalance + TargetBuyoutPrice) * (1 - (1 - CollectionTokensRecived * (1 - CollectorFee) / CollectionTokensSupply) ^ (1 / CollectionCollateralRatio)) * (1 - AnyrareFee - ReferralFee))`
 
-If the current collection price is too high, other investors will be discouraged from investing. Shareholders in collection will be able to burn their tokens in order to reduce the total supply and current collection price.
-
-### Governance Rules
+If the current collection price is too high, other investors will be discouraged from investing. Shareholders in collection will be able to burn their tokens or set new target price in order to reduce the total supply and current collection price.
 
 ### Funding Management
-The 1-Collateral of ARA were distributed to management wallets for develop Anyrare platform and ecosystem.
+The management fund was distributed to management wallets upon the minting of new ARA tokens in order to develop the platform and ecosystem. The owner of the management wallet may use these tokens freely to expand the Anyrare platform and ecosystem. By the way, ARA token owners have the ability to modify the list of management wallets and the percentage of each wallet that receives funds from the management fund.
+
+### Governance Rules
+Because the ARA token owner is also the owner of the Anyrare platform, they can vote and adjust these policies using their tokens.
+
+- Anyrare platform fees, dividend payout ratios, or buyback ratios
+- Referral fees
+- Approve or deny auditors or custodians
+- Make adjustment to the ARA collateral and management ratios
+- Modify the management list
+- Operate the ARA blockchain node
+- Determine the voting rule for each policy
 
 ### Project Roadmap
 
