@@ -2,9 +2,9 @@
 
 Author: [Panasun Sunanta (Bin)](mailto:panasun@i17.co)
 
-Version: 0.1.0
+Version: 0.1.1
 
-Last update: Dec 8, 2021
+Last update: Dec 17, 2021
 
 ## Abstract
 
@@ -70,9 +70,9 @@ AnyRare is designed to be a decentralized organization which anyone can contribu
 ### ARA Pricing Formula
 The ARA was using a bonding curve formula to determine the price. To begin minting new ARA tokens, the minter must first transfer the collateral token (DAI) to the ARA smart contract. Then, according to the following formula, the new ARA token will be issued in total supply.
 
-`IssuedToken = ContinuousTokenSupply * ((1 + CollateralTokensReceived / CollateralTokenBalance) ^ (CollateralRatio) - 1)`
+`IssuedToken = ARATokenSupply * ((1 + CollateralTokensReceived / CollateralTokenBalance) ^ (CollateralRatio) - 1)`
 
-The minter will be receive
+The minter will be receive.
 
 `MinterPurchaseReturn = IssuedToken * (1 - ManagementRatio)`
 
@@ -82,11 +82,36 @@ Additionally, the remainder of the issued tokens will be distributed for managem
 
 To withdraw, the withdrawer must transfer ARA tokens to the smart contract and will receive collateral tokens according to the formula below.
 
-`WithdrawerSaleReturn = CollateralTokenBalance * (1 - (1 - ContinuosTokensReceived / ContinuousTokensSupply) ^ (1 / CollateralRatio))`
+`WithdrawerSaleReturn = CollateralTokenBalance * (1 - (1 - ARATokensReceived / ARATokensSupply) ^ (1 / CollateralRatio))`
 
 Please keep in mind that this formula will dynamically adjust the overall quantity of ARA tokens based on the collateral tokens locked in the smart contract.
 
 ### Collection Pricing Formula
+Due to the characteristics of rare assets, which include billion of skus, traditional liquidity models such as order books are unsuitable to offer sufficient liquidity. As a result, we will implement an automated market maker (AMM) method based on the bonding curve formula in orders to provide immediate liquidity to collection shareholders.
+
+To create a collection, the collect will select NFTs to fractionalize, set the collection's target price in ARA currency, collector fee, and collateral ratio. Then, the collector's NFTs will be transferred to a collection smart contract, and the collector will receive 100% of the collection shares.
+
+The collector is not permitted to withdraw NFTs from the custodian at this point. To withdraw, the collector or anyone else must buyout the collection, at which point the collection's NFTs will be unlocked and transferred to the new owner.
+
+`InitialCollectionToken = `
+
+To purchase collection shares, investors will transfer ARA to the collection smart contract, which will issued a new collection token using the following equation.
+
+`IssuedCollectionToken = CollectionTokenSupply * ((1 + ARATokensReceived * (1 - AnyrareFee - ReferralFee)  / ARATokenBalance) ^ (CollectionCollateralRatio) - 1)`
+
+The investor will be receive.
+
+`InvestorPurchaseReturn = IssuedCollectionToken * (1 - CollectorFee)`
+
+Additionally, the remainder of the issued tokens will be transfer to collector for royaly fee.
+
+`CollectorRoyaltyReturn = IssuedCollectionToken * CollectorFee`
+
+To sell, the investor must transfer collections tokens to the smart contract and will receive ARA tokens according to the formula below.
+
+`InvestorSaleReturn = ARATokenBalance * (1 - (1 - CollectionTokensRecived * (1 - CollectorFee) / CollectionTokensSupply) ^ (1 / CollectionCollateralRatio)) * (1 - AnyrareFee - ReferralFee)`
+
+If the current collection price is too high, other investors will be discouraged from investing. Shareholders in collection will be able to burn their tokens in order to reduce the total supply and current collection price.
 
 ### Governance Rules
 
