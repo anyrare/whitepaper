@@ -1,0 +1,174 @@
+anyrare:
+  smartContract:
+    ARA:
+      ERC20:
+        - mint
+        - withdraw
+        - burn
+        - transfer
+        - transferFrom
+      bancorFormula:
+        - purchaseTargetAmount
+        - saleTargetAmount
+    Anyrare:
+      AssetFactoryFacet:
+        mint:
+          - mintAsset
+          - custodianSign
+          - payFeeAndClaimToken
+          - openAuction
+          - bidAuction
+          - processAuction
+        buyItNow:
+          - openBuyItNow
+          - changeBuyItNowPrice
+          - buyFromBuyItNow
+          - closeBuyItNow
+        offer:
+          - openOffer
+          - acceptOffer
+          - revertOffer
+        redeem:
+          - redeem
+          - redeemCustodianSign
+          - revertRedeem
+        transfer:
+          - transferFrom
+          - transferOpenFee
+          - transferARAFromContract
+      Collection:
+        CollectionFactoryFacet:
+          mint:
+            - mint
+          transfer:
+            - transferARAFromContract
+        CollectionFractionalFacet:
+          stock:
+            - initStock
+          orderBook:
+            - openBuyLimit
+            - openSellLimit
+            - cancelBuyLimit
+            - cancelSellLimit
+            - buyMarket
+            - sellMarket
+          amm:
+            - addLiquidity
+            - removeLiquidity
+          buyout:
+            - setTargetPrice
+            - buyout
+            - unlockCollection
+      GovernanceFacet:
+        policy:
+          - initPolicy
+      ManagementFundFacet:
+        calculate:
+          - calculateFounderFundPortion
+          - calculateValueFromPolicy
+        distribute:
+          - distributeFund
+          - distributeLockupFund
+      MemberFacet:
+        - createMember
+        - updateMember
+      ProposalFacet:
+        policy:
+          - openPolicyProposal
+          - votePolicyProposal
+          - countVotePolicyProposal
+          - applyPolicyProposal
+        list:
+          - openListProposal
+          - voteListProposal
+          - countVoteListProposal
+          - applyListProposal
+        policyName:
+          - ARA_COLLATERAL_WEIGHT
+          - ARA_MINT_MANAGEMENT_FUND_WEIGHT
+          - BUYBACK_WEIGHT
+          - MANAGEMENT_FUND_MANAGER_WEIGHT
+          - FINANCING_CASHFLOW_LOCKUP_WEIGHT
+          - FINANCING_CASHFLOW_LOCKUP_TARGET_VALUE_WEIGHT
+          - FINANCING_CASHFLOW_LOCKUP_PARTIAL_UNLOCK_WEIGHT
+          - MANAGEMENT_FUND_DISTRIBUTE_FUND_PERIOD
+          - MANAGEMENT_FUND_DISTRIBUTE_LOCKUP_FUND_PERIOD
+          - OPEN_AUCTION_NFT_PLATFORM_FEE
+          - OPEN_AUCTION_NFT_REFERRAL_FEE
+          - EXTENDED_AUCTION_NFT_TIME_TRIGGER
+          - EXTENDED_AUCTION_NFT_DURATION
+          - EXTENDED_AUCTION_COLLECTION_TIME_TRIGGER
+          - EXTENDED_AUCTION_COLLECTION_DURATION
+          - MEET_RESERVE_PRICE_AUCTION_NFT_TIME_LEFT
+          - CLOSE_AUCTION_NFT_PLATFORM_FEE
+          - CLOSE_AUCTION_NFT_REFERRAL_BUYER_FEE
+          - CLOSE_AUCTION_NFT_REFERRAL_SELLER_FEE
+          - NFT_MINT_FEE
+          - NFT_CUSTODIAN_CAN_CLAIM_DURATION
+          - CREATE_COLLECTION_FEE
+          - BUY_COLLECTION_PLATFORM_FEE
+          - BUY_COLLECTION_REFERRAL_COLLECTOR_FEE
+          - BUY_COLLECTION_REFERRAL_INVESTOR_FEE
+          - SELL_COLLECTION_PLATFORM_FEE
+          - SELL_COLLECTION_REFERRAL_COLLECTOR_FEE
+          - SELL_COLLECTION_REFERRAL_INVESTOR_FEE
+          - TRANSFER_COLLECTION_PLATFORM_FEE
+          - TRANSFER_COLLECTION_REFERRAL_COLLECTOR_FEE
+          - TRANSFER_COLLECTION_REFERRAL_SENDER_FEE
+          - TRANSFER_COLLECTION_REFERRAL_RECEIVER_FEE
+          - OPEN_AUCTION_COLLECTION_DURATION
+          - OPEN_AUCTION_COLLECTION_NEXT_BID_WEIGHT
+          - CLOSE_AUCTION_COLLECTION_PLATFORM_FEE
+          - CLOSE_AUCTION_COLLECTION_REFERRAL_COLLECTOR_FEE
+          - CLOSE_AUCTION_COLLECTION_REFERRAL_INVESTOR_FEE
+          - MANAGERS_LIST
+          - AUDITORS_LIST
+          - CUSTODIANS_LIST
+          - OPEN_BUY_IT_NOW_NFT_PLATFORM_FEE
+          - OPEN_BUY_IT_NOW_NFT_REFERRAL_FEE
+          - BUY_IT_NOW_NFT_PLATFORM_FEE
+          - BUY_IT_NOW_NFT_REFERRAL_BUYER_FEE
+          - BUY_IT_NOW_NFT_REFERRAL_SELLER_FEE
+          - OFFER_NFT_DURATION
+          - OFFER_NFT_PLATFORM_FEE
+          - OFFER_NFT_REFERRAL_BUYER_FEE
+          - OFFER_NFT_REFERRAL_SELLER_FEE
+          - REDEEM_NFT_PLATFORM_FEE
+          - REDEEM_NFT_REFERRAL_FEE
+          - REDEEM_NFT_REVERT_DURATION
+          - TRANSFER_NFT_PLATFORM_FEE
+          - TRANSFER_NFT_REFERRAL_SENDER_FEE
+          - TRANSFER_NFT_REFERRAL_RECEIVER_FEE
+    # ERC721
+    Asset:
+      info:
+        - tokenURI
+        - tokenInfo
+        - auctionInfo
+        - totalAsset
+      transfer:
+        - approve
+        - transfer
+      mint:
+        - mint
+        - custodianSign
+        - payFeeAndClaimToken
+      auction:
+        - setOpenAuction
+        - updateAuction
+        - setBidAuction
+        - updateAssetIsAuction
+      buyItNow:
+        - updateBuyItNow
+      offer:
+        - setOfferBid
+        - updateOffer
+        - updateOfferStatus
+      redeem:
+        - updateRedeem
+        - updateRedeemFreeze
+          
+        
+  webFrontend:
+  api:
+  webAdmin:
