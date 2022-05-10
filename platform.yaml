@@ -171,6 +171,49 @@ anyrare:
         - updateRedeem
         - updateRedeemFreeze
   webFrontend:
+    home:
+      - feature
+      - auctionList
+      - collectionList
+    browse:
+      - search
+      - asset
+      - collection
+    asset:
+      - info
+      - auction
+      - history
+      - buyItNow
+      - offer
+      - redeem
+    collection:
+      - createCollection
+      - info
+      - shareholder
+      - buyout
+      - orderBook
+    history:
+      - auctionHistory
+      - collectionTradeHistory
+      - currentAuction
+    profile:
+      - profile
+      - assetList
+      - collectionList
+      - referralList
+    account:
+      - login
+      - register
+    policy:
+      - policyList
+      - votePolicy
+      - openPolicy
+    ARA:
+      - mintARA
+      - burnARA
+      - ammARA
+  documentation:
+    - gitBook
   api:
     user:
       - uuid
@@ -210,5 +253,3 @@ anyrare:
       - pendingAsset
       - redeemAsset
       - assetList
-      
-    
