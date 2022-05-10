@@ -16,9 +16,11 @@ anyrare:
           - mintAsset
           - custodianSign
           - payFeeAndClaimToken
+        auction:
           - openAuction
           - bidAuction
           - processAuction
+          - auctionWithRequireOtherAssetOrCollection
         buyItNow:
           - openBuyItNow
           - changeBuyItNowPrice
@@ -55,6 +57,7 @@ anyrare:
           amm:
             - addLiquidity
             - removeLiquidity
+            - 
           buyout:
             - setTargetPrice
             - buyout
@@ -167,8 +170,45 @@ anyrare:
       redeem:
         - updateRedeem
         - updateRedeemFreeze
-          
-        
   webFrontend:
   api:
+    user:
+      - uuid
+      - oauth # Metamask, Gmail, Facebook, Email
+    account:
+      - type # Self Manage Key or Anyrare Manage Key
+      - walletAndSecret
+      - profile
+      - assetList
+      - collectionList
+    feature:
+      asset:
+        - mostActiveAuction
+        - sortByAuctionTimeLeft
+        - newlyAdded
+      collection:
+        - mostActiveTrade
+        - mostValue
+        - mostShareholder
+    asset:
+      - owner
+      - info
+      - fee
+      - history
+    collection:
+      - shareholder
+      - tradeHistory
+      - bidAskOrderBook
+      - buyoutPrice
   webAdmin:
+    auditor:
+      mintNewAsset:
+        - uploadInfoToIpfs
+      assetList:
+        - assetList
+    custodian:
+      - pendingAsset
+      - redeemAsset
+      - assetList
+      
+    
